@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    max-width: 100%;
+    min-height: 100vh;
+    background-image: url(galleri-background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border-bottom: 1px solid white;
+    width: 100vw;
+    z-index: 1000;
+    background-color: black;
+    padding: 1.2rem;
+    font-size: 0.8rem;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+
+}
+
+a.link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: inherit;
+    font-weight: bold;
+}
+
+main {
+    padding-top: 10rem;
+    width: 100%;
+    display: flex; 
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main p {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.main-beskrivning {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.8rem;
+    margin-bottom: 1.3rem;
+    border-radius: 15px;
+}
+
+.main-box {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: black;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.video-box {
+    position:relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    padding-bottom: 56.25%;
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.footer-box {
+    background-color: black;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-box p {
+    flex: 1;
+    text-align: center;
+}
+
+.galleri-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.galleri-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.galleri-rutor p {
+    text-align: center;
+    margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+    .galleri-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galleri-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.galleri-rutor img:hover {
+    transform: scale(1.05);
+    filter: brightness(80%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.overlay:target {
+    display: flex;
+}
+
+.overlay .stäng {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+}
