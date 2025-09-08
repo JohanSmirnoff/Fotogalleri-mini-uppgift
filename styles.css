@@ -116,6 +116,7 @@ main p {
 .footer-box p {
     flex: 1;
     text-align: center;
+    padding: 1rem;
 }
 
 .galleri-container {
